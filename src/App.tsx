@@ -1,10 +1,12 @@
+// In our tsconfig, we made @ our absolute path to our src directory
+import Navbar from "@/scenes/navbar"
+
 function App() {
 	return (
 		<>
-			<div className="ml-4 flex h-24 border-2 border-gray-300 p-3 pt-2 text-gray-700 shadow-md">
-				app
+			<div className="app bg-gray-20">
+				<Navbar />
 			</div>
-			<div className="div"></div>
 		</>
 	)
 }
