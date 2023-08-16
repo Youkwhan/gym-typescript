@@ -1,3 +1,4 @@
+import ActionButton from "@/shared/ActionButton"
 import HText from "@/shared/HText"
 import { BenefitType, SelectedPage } from "@/shared/types"
 import {
@@ -6,6 +7,7 @@ import {
 	AcademicCapIcon,
 } from "@heroicons/react/24/solid"
 import { motion } from "framer-motion"
+import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png"
 import Benefit from "./Benefit"
 
 const benefits: Array<BenefitType> = [
@@ -87,26 +89,55 @@ function Benefits({ setSelectedPage }: Props) {
 				</motion.div>
 
 				{/* GRAPHICS AND DESCRIPTION */}
-				<div>
+				<div className="item-center mt-16 justify-between gap-20 md:mt-28 md:flex ">
 					{/* GRAPHIC */}
-					<img />
+					<img
+						className="mx-auto"
+						alt="benefits-page-graphic"
+						src={BenefitsPageGraphic}
+					/>
 
 					{/* DESCRIPTION */}
 					<div>
 						{/* TITLE */}
 						<div className="relative">
-							<div className="before:absolute before:-top-20 before:-left-20 before:z-[1] before:content-abstractwaves">
+							<div className="before:absolute before:-left-20 before:-top-20 before:z-[1] before:content-abstractwaves">
 								<div>
 									<HText>
-										
+										MILLIONS OF HAPPY MEMBERS GETTING{" "}
+										<span className="text-primary-500">FIT</span>
 									</HText>
 								</div>
 							</div>
 						</div>
 
 						{/* DESCRIPT */}
+						<div>
+							<p className="my-5 ">
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+								Voluptatum perferendis modi enim consectetur, repellendus
+								obcaecati animi officia autem temporibus magni at possimus eaque
+								ab eligendi quod neque quo dolore fugiat numquam, accusamus quae
+								expedita fuga ducimus! Sequi aperiam, inventore veritatis
+								facilis eius esse, porro delectus voluptates ipsam iste
+								reprehenderit fugit!
+							</p>
+							<p className="mb-5">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+								Aspernatur quaerat nostrum debitis alias porro quas modi quia
+								totam numquam iure ipsam quod, praesentium dolore autem nemo
+								natus quibusdam necessitatibus possimus?
+							</p>
+						</div>
 
 						{/* BUTTON */}
+						<div className="relative mt-16">
+							<div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
+								<ActionButton setSelectedPage={setSelectedPage}>
+									Join Now
+								</ActionButton>
+							</div>
+						</div>
 					</div>
 				</div>
 			</motion.div>
