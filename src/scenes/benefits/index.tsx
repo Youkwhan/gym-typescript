@@ -8,10 +8,6 @@ import {
 import { motion } from "framer-motion"
 import Benefit from "./Benefit"
 
-type Props = {
-	setSelectedPage: (value: SelectedPage) => void
-}
-
 const benefits: Array<BenefitType> = [
 	{
 		icon: <HomeModernIcon className="h-6 w-6" />,
@@ -33,6 +29,17 @@ const benefits: Array<BenefitType> = [
 	},
 ]
 
+const container = {
+	hidden: {},
+	visible: {
+		transition: { staggerChildren: 0.2 },
+	},
+}
+
+type Props = {
+	setSelectedPage: (value: SelectedPage) => void
+}
+
 function Benefits({ setSelectedPage }: Props) {
 	return (
 		<section id="benefits" className="mx-auto min-h-full w-5/6 py-20">
@@ -51,7 +58,13 @@ function Benefits({ setSelectedPage }: Props) {
 				</div>
 
 				{/* BENEFITS */}
-				<div className="mt-5 items-center justify-between gap-8 md:flex">
+				<motion.div
+					className="mt-5 items-center justify-between gap-8 md:flex"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.5 }}
+					variants={container}
+				>
 					{benefits.map((benefit: BenefitType) => (
 						<Benefit
 							key={benefit.title}
@@ -61,7 +74,7 @@ function Benefits({ setSelectedPage }: Props) {
 							setSelectedPage={setSelectedPage}
 						/>
 					))}
-				</div>
+				</motion.div>
 			</motion.div>
 		</section>
 	)
