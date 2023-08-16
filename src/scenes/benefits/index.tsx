@@ -85,6 +85,30 @@ function Benefits({ setSelectedPage }: Props) {
 						/>
 					))}
 				</motion.div>
+
+				{/* GRAPHICS AND DESCRIPTION */}
+				<div>
+					{/* GRAPHIC */}
+					<img />
+
+					{/* DESCRIPTION */}
+					<div>
+						{/* TITLE */}
+						<div className="relative">
+							<div className="before:absolute before:-top-20 before:-left-20 before:z-[1] before:content-abstractwaves">
+								<div>
+									<HText>
+										
+									</HText>
+								</div>
+							</div>
+						</div>
+
+						{/* DESCRIPT */}
+
+						{/* BUTTON */}
+					</div>
+				</div>
 			</motion.div>
 		</section>
 	)
